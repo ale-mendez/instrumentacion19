@@ -1,0 +1,5 @@
+
+git add <nuevo file>
+git status
+git commit -m "comentario sobre nuevo file"
+git push origin master
