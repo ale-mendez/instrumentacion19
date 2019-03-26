@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-
+#
+# execute as: sudo ./idn_instrument.py
+#
 import visa
 
 rm=visa.ResourceManager()
@@ -13,4 +15,5 @@ print(my_instrument.query('*IDN?'))
 # we can also ask like
 my_instrument.write('*IDN?')
 print(my_instrument.read())
+
 
