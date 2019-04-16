@@ -1,4 +1,4 @@
-# notas de clase
+# notas de clase (incompleto)
 
 from lantz import Feat
 from lantz.messagebased import MessageBasedDriver

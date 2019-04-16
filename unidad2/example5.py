@@ -1,3 +1,4 @@
+# notas de clase de errores 
 
 def fun(x):
     if x == 0:
