@@ -20,7 +20,7 @@ class WaveGenerator(Instrumento):
     def which_freq_mod(self):
         return self.instr.query('SOURce1:FREQuency:MODE?')
 
-    def set_freq_mod(self, modtype):
+    def freq_mod(self, modtype):
         # options:
         # CW|SWEep
         if modtype == 'CW':
@@ -29,10 +29,10 @@ class WaveGenerator(Instrumento):
             print('setting freq mode == sweep')
         return self.instr.write('SOURce1:FREQuency:MODE '+modtype)
 
-    def set_freq_fix(self,freq):
+    def freq_fix(self,freq):
         return self.instr.write('SOURce1:FREQuency:FIXed '+freq)
 
-    def set_func_shape(self,ishape):
+    def func_shape(self,ishape):
         # options:
         # SINusoid|SQUare|PULSe|RAMP|PRNoise|DC|SINC|GAUSsian|LORentz|ERISe|EDECay|HAVersine
         print('setting '+ishape+' function')
@@ -49,8 +49,8 @@ print('My current instrument is: \n',whoami.strip())
 whichfreqmod = my_instrument.which_freq_mod()
 print(whichfreqmod.strip())
 # set frequency mode:
-my_instrument.set_freq_mod('CW')
+my_instrument.freq_mod('CW')
 # set function shape
-my_instrument.set_func_shape('SQU')
+my_instrument.func_shape('SQU')
 # set fixed frequency value
-my_instrument.set_freq_fix('500kHz')
+my_instrument.freq_fix('500kHz')
