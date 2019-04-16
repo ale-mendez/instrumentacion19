@@ -1,0 +1,4 @@
+modo burst (un solo pulso)
+ - el numero de ciclo (dentro de BM)
+ - fase
+trigger source
