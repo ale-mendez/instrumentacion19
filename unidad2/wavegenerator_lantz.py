@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 #
 
-import lantz
+
 import visa
+from lantz.messagebased import MessageBasedDriver
 
 
 rm=visa.ResourceManager('py')
@@ -14,7 +15,7 @@ class WaveGenerator(MessageBasedDriver):
 
     ##@Feat()
     def who_am_i(self):
-        idn = self.instr.query('*IDN?')
+        idn = self.query('*IDN?')
         return idn.strip()
 
 
