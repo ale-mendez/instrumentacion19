@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 
 import visa
-import matplotlib.pyplot as plt
-
 import numpy as np
+import matplotlib.pyplot as plt
 
 rm = visa.ResourceManager()
 instruments=rm.list_resources()
