@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.4)  13 MAY 2019 17:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.4)  21 MAY 2019 15:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -657,32 +657,44 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count100
+\float@exts=\toks24
+\float@box=\box28
+\@float@everytoks=\toks25
+\@floatcapt=\box29
+)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count100
-\lst@gtempboxa=\box28
-\lst@token=\toks24
-\lst@length=\count101
+\lst@mode=\count101
+\lst@gtempboxa=\box30
+\lst@token=\toks26
+\lst@length=\count102
 \lst@currlwidth=\dimen121
-\lst@column=\count102
-\lst@pos=\count103
+\lst@column=\count103
+\lst@pos=\count104
 \lst@lostspace=\dimen122
 \lst@width=\dimen123
-\lst@newlines=\count104
-\lst@lineno=\count105
+\lst@newlines=\count105
+\lst@lineno=\count106
 \lst@maxwidth=\dimen124
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count106
-\lst@skipnumbers=\count107
-\lst@framebox=\box29
+\c@lstnumber=\count107
+\lst@skipnumbers=\count108
+\lst@framebox=\box31
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-(./informe3_grupo8.aux)
+(./informe3_grupo8.aux
+
+LaTeX Warning: Label `fig:frecuenciaminima' multiply defined.
+
+)
 \openout1 = `informe3_grupo8.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
@@ -703,75 +715,141 @@ LaTeX Font Info:    Try loading font information for TS1+cmr on input line 20.
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 20.
- (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count108
-\scratchdimen=\dimen125
-\scratchbox=\box30
-\nofMPsegments=\count109
-\nofMParguments=\count110
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count111
-\MPscratchDim=\dimen126
-\MPnumerator=\count112
-\makeMPintoPDFobject=\count113
-\everyMPtoPDFconversion=\toks26
-)
-\c@lstlisting=\count114
 
-Underfull \hbox (badness 10000) in alignment at lines 56--56
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count109
+\scratchdimen=\dimen125
+\scratchbox=\box32
+\nofMPsegments=\count110
+\nofMParguments=\count111
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count112
+\MPscratchDim=\dimen126
+\MPnumerator=\count113
+\makeMPintoPDFobject=\count114
+\everyMPtoPDFconversion=\toks28
+)
+\c@lstlisting=\count115
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+<V2-f1Hz.jpg, id=1, 773.289pt x 581.5326pt>
+File: V2-f1Hz.jpg Graphic file (type jpg)
+<use V2-f1Hz.jpg>
+Package pdftex.def Info: V2-f1Hz.jpg  used on input line 115.
+(pdftex.def)             Requested size: 137.9979pt x 103.77513pt.
+<V2-f10Hz.jpg, id=2, 773.289pt x 581.5326pt>
+File: V2-f10Hz.jpg Graphic file (type jpg)
+<use V2-f10Hz.jpg>
+Package pdftex.def Info: V2-f10Hz.jpg  used on input line 117.
+(pdftex.def)             Requested size: 137.9979pt x 103.77513pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+<Entrada-Volumen.jpg, id=14, 773.289pt x 581.5326pt>
+File: Entrada-Volumen.jpg Graphic file (type jpg)
+<use Entrada-Volumen.jpg>
+Package pdftex.def Info: Entrada-Volumen.jpg  used on input line 132.
+(pdftex.def)             Requested size: 137.9979pt x 103.77513pt.
+<PlacaAudio-Adq.jpg, id=15, 773.289pt x 581.5326pt>
+File: PlacaAudio-Adq.jpg Graphic file (type jpg)
+<use PlacaAudio-Adq.jpg>
+Package pdftex.def Info: PlacaAudio-Adq.jpg  used on input line 134.
+(pdftex.def)             Requested size: 137.9979pt x 103.77513pt.
+
+Underfull \hbox (badness 10000) in alignment at lines 151--151
 [][][][] 
  []
 
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-) [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<circuit.png, id=12, 220.825pt x 260.975pt>
-File: circuit.png Graphic file (type png)
-<use circuit.png>
-Package pdftex.def Info: circuit.png  used on input line 126.
-(pdftex.def)             Requested size: 120.7521pt x 163.8178pt.
+<circuit.jpg, id=16, 541.27219pt x 291.33844pt>
+File: circuit.jpg Graphic file (type jpg)
+<use circuit.jpg>
+Package pdftex.def Info: circuit.jpg  used on input line 175.
+(pdftex.def)             Requested size: 172.5pt x 92.84789pt.
 Package epstopdf Info: Source file: <diodo.eps>
-(epstopdf)                    date: 2019-05-13 17:25:51
-(epstopdf)                    size: 378349 bytes
+(epstopdf)                    date: 2019-05-21 18:32:32
+(epstopdf)                    size: 380012 bytes
 (epstopdf)             Output file: <diodo-eps-converted-to.pdf>
 (epstopdf)                    date: 2019-05-13 17:25:56
 (epstopdf)                    size: 619026 bytes
 (epstopdf)             Command: <repstopdf --outfile=diodo-eps-converted-to.pdf
  diodo.eps>
-(epstopdf)             \includegraphics on input line 128.
-Package epstopdf Info: Output file is already uptodate.
+(epstopdf)             \includegraphics on input line 177.
+runsystem(repstopdf --outfile=diodo-eps-converted-to.pdf diodo.eps)...executed 
+safely (allowed).
+
+Package epstopdf Info: Result file: <diodo-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-05-13 17:25:56
+(epstopdf)                    size: 619026 bytes.
 
 
 pdfTeX warning: pdflatex (file ./diodo-eps-converted-to.pdf): PDF inclusion: fo
 und PDF version <1.7>, but at most version <1.5> allowed
-<diodo-eps-converted-to.pdf, id=14, 394.47375pt x 496.85625pt>
+<diodo-eps-converted-to.pdf, id=17, 394.47375pt x 496.85625pt>
 File: diodo-eps-converted-to.pdf Graphic file (type pdf)
 <use diodo-eps-converted-to.pdf>
-Package pdftex.def Info: diodo-eps-converted-to.pdf  used on input line 128.
-(pdftex.def)             Requested size: 137.9979pt x 173.81131pt.
-[2 <./circuit.png> <./diodo-eps-converted-to.pdf>] (./informe3_grupo8.aux) ) 
+Package pdftex.def Info: diodo-eps-converted-to.pdf  used on input line 177.
+(pdftex.def)             Requested size: 120.7521pt x 152.09058pt.
+[2 <./V2-f1Hz.jpg> <./V2-f10Hz.jpg> <./Entrada-Volumen.jpg> <./PlacaAudio-Adq.j
+pg>]
+<slewratecircuit.png, id=23, 335.2525pt x 177.66376pt>
+File: slewratecircuit.png Graphic file (type png)
+<use slewratecircuit.png>
+Package pdftex.def Info: slewratecircuit.png  used on input line 196.
+(pdftex.def)             Requested size: 137.9979pt x 73.12996pt.
+Package epstopdf Info: Source file: <slewrate.eps>
+(epstopdf)                    date: 2019-05-21 15:40:18
+(epstopdf)                    size: 208265 bytes
+(epstopdf)             Output file: <slewrate-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-05-21 15:41:31
+(epstopdf)                    size: 978323 bytes
+(epstopdf)             Command: <repstopdf --outfile=slewrate-eps-converted-to.
+pdf slewrate.eps>
+(epstopdf)             \includegraphics on input line 211.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./slewrate-eps-converted-to.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<slewrate-eps-converted-to.pdf, id=25, 738.76pt x 386.44376pt>
+File: slewrate-eps-converted-to.pdf Graphic file (type pdf)
+<use slewrate-eps-converted-to.pdf>
+Package pdftex.def Info: slewrate-eps-converted-to.pdf  used on input line 211.
+
+(pdftex.def)             Requested size: 241.49895pt x 126.32391pt.
+[3 <./circuit.jpg> <./diodo-eps-converted-to.pdf> <./slewratecircuit.png>]
+[4 <./slewrate-eps-converted-to.pdf>] (./informe3_grupo8.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4796 strings out of 494923
- 62463 string characters out of 6180743
- 142825 words of memory out of 5000000
- 8049 multiletter control sequences out of 15000+600000
- 9324 words of font info for 34 fonts, out of 8000000 for 9000
+ 4891 strings out of 494923
+ 63952 string characters out of 6180743
+ 142925 words of memory out of 5000000
+ 8132 multiletter control sequences out of 15000+600000
+ 9670 words of font info for 35 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,10n,40p,330b,1187s stack positions out of 5000i,500n,10000p,200000b,80000s
-</u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on informe3_grupo8.pdf (2 pages, 694906 bytes).
+ 42i,11n,40p,330b,1187s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmti10.pfb>
+Output written on informe3_grupo8.pdf (4 pages, 2512860 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
+ 130 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 17 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
