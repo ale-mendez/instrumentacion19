@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import sys, os
 
 CHUNK = 1024
-FORMAT = pyaudio.paInt24
+FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 44100
 RECORD_SECONDS = 10
@@ -17,7 +17,7 @@ WAVE_OUTPUT_FILENAME = "output.wav"
 
 p = pyaudio.PyAudio()
 
-stream = p.open(format=FORMAT,channels=CHANNELS,rate=RATE,input=True,frames_per_buffer=CHUNK)
+stream = p.open(format=FORMAT,channels=CHANNELS,rate=RATE,input=True)
 
 print("* recording")
 

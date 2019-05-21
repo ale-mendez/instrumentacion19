@@ -2,7 +2,7 @@
 
 import pyaudio
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import sys, os
 
 p=pyaudio.PyAudio()
@@ -43,8 +43,10 @@ if itype==1:
     samples=sine(freq)
     ftype=pyaudio.paFloat32
 
-stream=p.open(format=ftype,channels=1,rate=nbuff,output=True)
-stream.write(volume*samples)
+stream=p.open(format=ftype,channels=2,rate=nbuff,output=True)
+#bin_out=''.join(chr(x) for x in samples)
+#stream.write(bin_out)
+stream.write(samples)
 
 stream.stop_stream()
 stream.close()

@@ -1,0 +1,6 @@
+
+multiprocessing: usar para programas cpu-bound
+threading: usar para programas io-bound
+asyncio: usar para programas io-bound sin threads
+
+

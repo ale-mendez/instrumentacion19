@@ -4,24 +4,42 @@ import pyaudio
 import random
 import numpy as np
 import matplotlib.pyplot as plt
+import sys, os
 
-stream=pyaudio.PyAudio().open(format=pyaudio.paInt8,channels=1,rate=22050,output=True)
+stream=pyaudio.PyAudio().open(format=pyaudio.paFloat32,channels=2,rate=22050,output=True)
 
-def sin(freq,duracion):
-	nbuff=int(22050/freq)
-	res8=2**8/3
-	ntimes=int((duracion*22050)/int(22050/freq/2))
-	seno=[int(np.sin(x*np.pi/nbuff)*res8) for x in range(0,nbuff)]
-	return seno*ntimes
+def sin(freq,duration):
+   nbuff=int(22050/freq)
+   res8=2**8/3
+   ntimes=int((duration*22050)/int(22050/freq/2))
+   seno=[np.sin(2*x*np.pi/nbuff) for x in range(0,nbuff)]
+   sinarr=np.array(seno)
+   return sinarr.astype(np.float32)
 
+def sin_bis(freq):
+   xmax=nbuff
+   xfreq=int(nbuff/freq)
+   ntimes=int(duration*xfreq)
+   x=np.arange(xfreq*ntimes)
+   print(xfreq*ntimes)
+   out=amp*np.sin(2*np.pi*x*freq/nbuff)
+   return out.astype(np.float32)
 
-freq=200
-duracion=2
-seno=sin(freq,duracion)
-#plt.plot(seno)
-#plt.show()
+amp=2**8
+nbuff=44100 
+#freq=200
+freq=100.0        # sine frequency, Hz, may be float
+duration=10.0       # in seconds, may be float
+seno=sin(freq,duration)
+print(type(seno),np.size(seno))
 
-bin_seno=''.join(chr(x) for x in seno) #this transforms out into a binary string
-stream.write(bin_seno) #which we can then write to the stream in one go.
+seno=sin_bis(freq)
+print(type(seno),np.size(seno))
+plt.plot(seno,'k-')
+plt.show()
+
+sys.exit()
+
+stream.write(seno) #which we can then write to the stream in one go.
 stream.close()
 pyaudio.PyAudio().terminate()

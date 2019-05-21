@@ -1,0 +1,146 @@
+
+Objetivos:
+
+Los receptores opticos son los componentes situados en el extremo final
+de un enlace optico donde se recupera la información transmitida a través 
+de la fibra óptica. más concretamente es el detector óptico donde se 
+produce la conversion optico-eléctrica. el detector optico, más toda la
+circuitería electronica necesaria para polarizar el propio detector
+y también circuitos de amplificación es lo que conforma lo que conocemos
+como receptor óptico. 
+
+En concreto en este tema los objetivos serán los conceptos fundamentales 
+de la detección óptica, 
+
+Conocer los distintos tipos de fotodectectores, hablaremos del ruido de 
+cuantificación como ruido propio de la radiación transmitida, hablaremos 
+también de parámetros que caracterizan la respuesta de los detectores, 
+como son la eficiencia cuántica y la responsibidad del detector. 
+
+Estudiaremos los fotodiodos PIN y de avalancha (APD).
+
+Como tercer objetivo de este tema está también comprender los mecanismos
+que limitan la respuesta en frecuencia de la detección óptica. 
+
+A continuación también estudiaremos las fuentes de ruido y la configuración
+de preamplificación en receptores ópticos. Para llegar a obtener la 
+relación señal/ruido que caracterizará la calidad de los sistemas analógicos
+
+Y finalmente, calcular la sensibilidad de un receptor de comunicaciones 
+ópticas para la aplicación de transmisión digital.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Es deseable tener fotodetectores con una responsibilidad lo más alta
+posible. Sin embargo, encontramos que un fotodiodo ideal, en el mejor
+de los casos, nos dará un electrón como contribuyente a la corriente
+por cada fotón incidente sobre el detector. 
+
+Con objeto de mejorar esa responsibidad de esa respuesta del detector
+se desarrollaron fotodiodos algo más complejos. Estos fotodiodos reciben
+el nombre de fotodiodos de avalancha (APD). 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Fotodiodo de avalancha (APD)
+
+La tensión aplicada al APD es bastante elevada (50-400V) y genera una
+zona de intenso campo eléctrico (zona de multiplicación). Los portadores
+acelerados en esta zona, adquieren una enorme cantidad de energá cinética
+y son capaces de liberar electron y huecos comunicándoles dicha energía 
+e incorporándolos a la fotocorriente. De esta manera, un portador (e o h)
+primario genera múltiples portadores secundarios mediante la multiplicación
+por avalancha.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+En un fotodiodo de avalancha, la zona intrínseca deja de ser una zona para
+convertirse en dos subzonas con dopajes distintos. En los fotodiodos de 
+avalancha, la tensión aplicada es bastante elevada, entre 50 y 400 V, 
+y se genera una zona de intenso campo eléctrico, lo que se denomina 
+zona de multiplicación. Los portadores acelerados en esta zona adquieren
+una enorme cantidad de energía cinética y son capaces de liberar electrones
+y huecos, comunicándoles dicha energía e incorporándolos a la fotocorriente.
+De esta forma, un portador, tanto electrón como hueco primario, genera
+múltiples portadores secundarios mediante lo que conocemos por multiplicación
+por avalancha. 
+
+Si miramos el esquema de la figura encontramos distintas subzonas con dopaje
+diferente. Tenemos una zona de absorción, donde se generan el par electrón
+hueco primario, donde el campo eléctrico es un campo moderado y hay una
+segunda zona, que es una zona de multiplicación, donde el campo es mucho
+más intenso, donde los electrones sufriran la aceleración y se generarán 
+los pares secundarios. Lo que se conoce como avalancha. 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Esto lo podemos ver con más detalle en la gráfica que tenemos aquí, 
+correspondiente a la zona de multiplicación o de avalancha. Cada electrón
+generado pues es acelerado por el campo presente, de forma que su energía 
+cinética es muy elevada. Ese electrón colisiona con otro electrón de la 
+banda de valencia y le cede parte de su energía, provocando que ese 
+electrón que estaba en la banda de valencia pase a la banda de conducción,
+generando el par electrón-hueco. A su vez, dos electrones son acelerados, 
+colisionan con otros dos y generan nuevos pares electrón-huecos, y así 
+sucesivamente. Tenemos una situación en la que cada electrón primario
+generado por un fotón, genera ahora en promedio M pares electrón-hueco 
+por efecto de la multiplicación. Por lo tanto, su respuesta es M veces
+mayor que la de un diodo PIN.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Vamos a denominar a M la ganancia interna del fotodiodo de avalancha. 
+Los valores típicos están entre 20 y 60. De esta forma la fotocorriente
+generada por el fotodiodo de avalancha es M veces superior a la del 
+fotodetector PIN cuyos parámetros fuesen equivalentes. De hecho 
+podemos escribir la fotocorriente como la responsibidad del APD por la
+potencia. Y esta responsibidad del APD no es más que M por la 
+responsibidad del PIN equivalente, donde podemos sustituir R por 
+la expresión correspondiente. 
+
+Sin embargo, el problema principal de los fotodiodos de avalancha es que 
+el propio mecanismo de generacion de electrones es aleatorio. Es decir,
+la ganancia M es una variable aleatoria, cuya media es Mbar, pero que 
+lleva un ruido adicional asociado. Tendremos que tener en cuenta este 
+ruido adicional y será uno de los mecanismo de ruido que serán considerados
+tanto en los sistemas analógicos como en los sistemas digitales.
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Ruido de cuantificación o ruido shot
+
+Como vimos al principio del tema, un resultado de la mecánica cuántica
+es que la radiación electromangética está cuantificada y podemos 
+tratar esta radiación en terminos de cuantos o fotones. Una consecuencia 
+de este resultado es que la propia radiación va a tener naturaleza 
+ruidosa. Este ruido lo llamaremos ruido de cuantificación.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Si estudiamos el fenómeno de emisión de luz por una fuente óptica. La 
+emisión de luz es de tipo estocástica. Esto quiere decir que la emisión
+de fotones no es perfectamente periódica. No se emiten los fotones cada
+intervalo temporal idéntico. Sino que es un fenómeno aleatorio. Si la
+fuente es de tipo coherente, como es el caso de los láseres, la 
+probabilidad de que un fotón sea emitido en el intervalo t es uniforme 
+dentro de dicho intervalo. Esto es lo mismo que decir que el número de 
+fotones por la fuente durante un intervalo t sigue una distribución de 
+Poisson y eso lo podemos ver en la transparencia.
+
+La probabilidad de tener n fotones emitidos en un intervalo de tiempo
+t sigue la distribución de Poisson en torno a un valor medio Nbar. Este
+valor medio será precisamente será la señal o flujo medio y el ruido 
+lo caracterizaremos con la desviación típica, que una distribución de 
+Poisson se corresponde con la raiz cuadrada del valor medio. Vista 
+la señal y el ruido correspondiente, podemos definir el ruido relativo.
+Si hacemos el cociente de la desviación típica respecto de la media, 
+obtenemos que este ruido relativo es inversamente proporcional a la 
+raiz del valor medio de fotones. O sea que encontramos que el ruido 
+relativo será mayor cuanto menor sea el número medio de fotones.
+
+Esto lo vamos a ver con un esquema más claramente. En el esquema tenemos
+el eje temporal de una señal formada por una secuencia de unos   
+
+
+

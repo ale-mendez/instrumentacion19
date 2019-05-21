@@ -114,10 +114,10 @@ print('-------------')
 # set frequency mode:
 my_instrument.freq_mod('CW')
 # set function shape
-my_instrument.func_shape('SQU')
+my_instrument.func_shape('SIN')
 # set fixed frequency value
-my_instrument.freq_fix('400Hz')
+my_instrument.freq_fix('100Hz')
 # set voltaje amplitude
-my_instrument.voltaje(1,'VPP')
+my_instrument.voltaje(2.5,'VPP')
 # set voltaje offset
 my_instrument.volt_offset(0,'mV')
