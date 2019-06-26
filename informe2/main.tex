@@ -1,0 +1,106 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{listings}             % Include the listings-package
+
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.25\hsize}X}
+
+%opening
+\title{Informe técnico: \\
+Placas de adquisición}
+\author{P. Domenichini, A. Mendez -- Grupo 8}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    En el presente informe se estudiaron las capacidades de dos placas de adquisición. Las placas utilizadas fueron un sensor DAQ y un arduino UNO. 
+\end{abstract}
+
+\section{Sensor DAQ}
+
+Se utilizó una placa de adquisición DAQ-Vernier de la marca National Instruments. Las capacidades de adquisición se estudiaron mediante los puertos 11 ($V1$), 10 ($V2$) y 9 ($Ground$) de esta. La tasa de muestreo se definió igual a 1000. Las respuestas en voltaje y frecuencia de la placa se muestran en la Figura~1 (a), (b), y (c), respectivamente. La amplitud mínima (panel a) es menor a 20 m$V_{pp}$, siendo ésta la mínima que se puede obtener con el generador de ondas utilizado. En el panel b, se puede observar que la amplitud máxima de voltaje es $\pm 10 V_{pp}$.  La caracterización en frecuencia se resume en el panel c. La frecuencia máxima registrada fue de 1kHz, la cual se corresponde a la tasa de muestreo preestablecida. No se realizaron mediciones con valores mayores a 1000. 
+Además, se evaluó la capacidad de la placa para medir en simultáneo. Para esto, se envió una rampa en ambos canales, y se midió la  diferencia entre ellos ($\Delta V$). La conexión realizada se puede ver en la Figura 2a. El valor medido de $\Delta V$ resultó distinto de cero (ver Figura 2c), de manera que ambos canales tienen una diferencia temporal en la adquisión. 
+
+Para la determinación de la diferencia temporal entre los canales de la placa DAQ, se procedió de la siguiente manera. Se consideraron dos rampas, las cuales fueron aproximadas como rectas:
+
+\begin{equation*}
+    V_{1} = A \cdot t + V0_1
+\end{equation*}
+\begin{equation*}
+    V_{2} = A \cdot t + V0_2
+\end{equation*}
+
+Siendo $A$ la pendiente de la rampa; $t$ el tiempo; y $V0_{1,2}$ los voltajes iniciales de los canales 1 y 2, respectivamente.
+El valor de $A$ se determinó utilizando la Configuración 1 de la Figura 2a. Los resultados obtenidos fueron ajustados mediante una recta, como se muestra en la Figura 2b. Por conveniencia tomamos $V0_1$ igual a $0$, y $V_2$ se calculó a partir de la medida realizada con la Configuración 2. Se colectaron datos durante 1 segundo, y se realizó un histograma (ver Figura 2d). La distribución obtenido fue ajustada con una función gaussiana, obteniéndose el valor medio y su dispersión, cómo se muestra con línea sólida en la Figura 2d. El tiempo de defasaje entre ambos canales ($t_{def}$) se calculó como:
+\begin{equation*}
+    -V0_{2} = A \cdot t_{def} \Rightarrow t_{def} = \frac{- V0_{2}}{A}
+\end{equation*}
+Los resultados obtenidos fueron $A=(0.1608 \pm 0.0001) \frac{V}{s}$, $V0_2 = -(0.003 \pm 0.001) V$, y $t_{def} = (0.019 \pm 0.006)s$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{DAQ_amplitud.jpg} \\
+  (a) \hspace{4cm} (b)
+  \includegraphics[trim={0 0 0 1.cm},clip, width=\textwidth]{DAQ_logfrequency.jpg}
+  (c)
+  \caption{Respuesta en amplitud (a) mínima, (b) máxima, y (c) en frecuencia de la placa DAQ.}
+  \label{fig:resp_freq}
+\end{figure}
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{DAQ-configuraciones.jpg} (a)
+    \includegraphics[width=0.4\textwidth]{ajustelineal.jpg} (b) \\
+    \includegraphics[width=0.4\textwidth]{diferencia.jpg} (c) 
+    \includegraphics[width=0.4\textwidth]{histogramafit.jpg} (d)
+    \caption{(a) Configuraciones utilizadas para medir una señal (1) y una diferencia (2). (b) Medida de la señal de la rampa utilizada. 
+    (c) Medida de la diferencia de los canales mandando una rampa de voltajes. (d) Histograma de las medidas obtenidas de $\Delta V$. }
+    \label{fig:diffV}
+\end{figure}
+
+Finalmente, los valores de respuesta en amplitud y frecuencia de la placa DAQ se resumen en la Tabla~1.
+\begin{table}[h]
+\begin{tabularx}{\textwidth}{b|s|s|s }
+Característica & Min & Máx & Unidad \\
+\hline
+Voltaje señal de entrada & 10 & -10 & V \\ 
+Frecuencia señal de entrada & 1 & 10000 & Hz \\
+\end{tabularx}
+\label{tab:inout-audio}
+\caption{Caracterización de la lectura de la placa DAQ para la configuración 1 mostrada en la Figura 2a de adquisición de datos.}
+\end{table}
+
+\section{Placa Arduino}
+
+Las placas Arduino cuentan con 14 pines digitales, siendo 6 PWM (Pulse Width Modulation), 6 pines de entrada analógica, y una alimentación entre 5 a 12 V.
+
+Las capacidades de adquisición se estudiaron mediante los puertos analógicos. La caracterización en frecuencia se resume en la Figura~XXX. La placa no puede medir señales mayores a 5V. Y de los resultados en frecuencia se observa que el sistema puede medir en frecuencias entre 0 a N. Y la respuesta en voltaje se puede ver en la figura XXX, mostrando que puede leer voltajes entre -5 a 5 V (ver si queda el voltaje negativo). 
+
+Cabe destacar que esta placa permite una gran versatilidad para la envia y resibir señales, por las características ya mencionadas y el prescio de la misma. (poner algo asi)
+
+El programa utilizado para medir la la placa Arduino es similar al siguiente:
+"poner algo" pued ser la parte de programacion de arduino y la lectura del puerto serie con python. O ver si ponemos algo de Lanzt.
+
+\begin{table}[h]
+\begin{tabularx}{\textwidth}{b|s|s|s }
+Característica & Min & Máx & Unidad \\
+\hline
+Voltaje señal de entrada pin analógico & 5 & -5 & V \\ 
+Voltaje señal de salida pin digital & -5 & 5 & V \\
+Frecuencia señal de entrada pin analógico & 1 & 10000 & Hz \\
+Frecuencia señal de salida pi digital & 10 & 10000 & Hz 
+\end{tabularx}
+\label{tab:inout-audio}
+\caption{Caracterización de señales de entrada y salida de la placa de audio.}
+\end{table}
+
+\end{document}
