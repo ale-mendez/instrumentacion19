@@ -1,0 +1,22 @@
+
+int iPin = 10;
+int istep = 0;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(iPin,OUTPUT);
+  Serial.setTimeout(50);
+}
+
+void loop() {
+//  istep = Serial.parseInt();
+//  istep=10;
+//  if (istep>0) {
+//    Serial.println("One step now: \n");
+    digitalWrite(iPin , HIGH);
+    delay(100);
+    digitalWrite(iPin , LOW);
+    delay(1100);
+//    istep=0;
+//  }
+}

@@ -1,4 +1,3 @@
- 
 // Incluímos la librería para poder utilizarla
 #include <Stepper.h>
  
@@ -6,7 +5,7 @@ int in1Pin = 8;
 int in2Pin = 10;
 int in3Pin = 9;
 int in4Pin = 11;
-int maxsteps = 2048; // número de pasos en un minuto (full step mode)
+int maxsteps = 48; // número de pasos en un minuto (full step mode)
 //int maxsteps = 4096; // número de pasos en un minuto (half step mode)
 int nstops = 8;  // number of stops 
 int nsteps = maxsteps/nstops; // número de pasos que queremos que de
