@@ -1,0 +1,117 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{textcomp}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+%opening
+\title{Tomografía óptica usando la ecuación independiente del tiempo 
+de transferencia radiativa}
+\author{A. Mendez}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+La tomografía óptica (OT), también denominada tomografía óptica difusa 
+(DOT) o tomografía de migración de fotón (PMT), constituye una técnica
+que permite reconstruir la distribución espacial de las propiedades
+ópticas (por ejemplo, el coeficiente de absorción $\mu_a$ y el coeficiente 
+de dispersión $\mu_s$) de ciertos medios dispersivos a partir de la 
+medición de intensidades transmitidas y/o reflejadas en la superficie de
+dicho medio. El rango de longitudes de onda de la luz utilizada para 
+esta técnica está ubicado en el infrarojo cercano, aproximadamente
+650nm$<\lambda<$900nm. 
+
+La OT es implementada en diversas áreas científicas, desde la oceonografía 
+hasta las ciencias atmosféricas, la astronomía y la física de neutrones. 
+Sin embargo, los avances más recientes se deben a la implementación de la
+OT en la óptica biomédica. Este campo está enfocado en el 
+uso de la luz visible y cercana al infrarojo para el diagnóstico y 
+tratamiento de tejidos biológicos. Existen ejemplos de monitoreo óptico 
+de oxigenación de sangre, detección de hemorragias cerebrales, mapeo 
+funcional de la actividad cerebral y diagnóstico de la enfermedad de 
+Alzheimer, artritis reumoidal, o cáncer. La implementación de la OT se 
+basa en el hecho de que ciertos procesos de las enfermedades y la mayoría 
+de los cambios fisiológicos afectan las propiedades ópticas de los tejidos
+biológicos. Las propiedades ópticas de interés son los coeficientes de 
+absorción $\mu_a$, de dispersión $\mu_s$, y el factor de anisotropía~$g$, 
+o una combinación de ellos. Las diferencias en estas propiedades ópticas 
+entre tejidos sanos y patológicos proveen un contraste para esta 
+tecnología de mapeo.
+
+El transporte de fotones en medios dispersivos puede describirse a 
+través de la ecuación independiente del tiempo de transferencia 
+radiativa, dada por
+\begin{equation}
+ \omega\nabla\Psi(\mathbf{r},\omega)+(\mu_a+\mu_s)\Psi(\mathbf{r},\omega)
+ =S(\mathbf{r},\omega) + 
+ \mu_s\int_0^{2\pi}p(\omega,\omega')\Psi(\mathbf{r},\omega')\,d\omega'\,.
+\label{eq:transf-rad}
+\end{equation}
+La cantidad fundamental en la teoría de transporte radiativo es la
+radiancia $\Psi(\mathbf{r},\omega)$ en la posición espacial 
+$\mathbf{r}$, sobre un unidad de ángulo sólido $\omega$, con unidades 
+W cm$^{-2}$ sr$^{-1}$. La integral de la radiación sobre todos los 
+ángulos $\omega$ en el punto $\mathbf{r}$ define la fluencia (densidad de 
+energía) $\Phi(\mathbf{r})$:
+\begin{equation}
+ \Phi(\mathbf{r})=\int_{2\pi}\Psi(\mathbf{r},\omega)\,d\omega\,.
+\end{equation}
+Otras cantidades incluidas en la ecuación de transporte son los 
+coeficientes de dispersión $\mu_s$ y de absorción $\mu_a$, ambos dados 
+en unidades de cm$^{-1}$, y la función de fase de dispersión 
+$p(\omega,\omega')$. En general, la función implementada es la función de
+ dispersión de Henyey-Greennstein
+\begin{equation}
+ p(\cos\theta)=\frac{1-g^2}{2(1+g^2-2g\cos\theta)^{3/2}}\,
+\end{equation}
+donde $\theta$ es el ángulo entre las dos direcciones $\omega$ y 
+$\omega$'. El factor $g$ se denomina factor de anisotropía y es utilizado 
+para caracterizar la distribución angular de dispersión.
+
+En general, la mayoría de los algoritmos implementados se basan en la validez 
+de la aproximación de difusión de la ecuación de transferencia de radiación.
+Sin embargo, esta aproximación ha mostrado tener límites experimentales y 
+teóricos a la hora de describir la propagación de luz en tejidos biológicos.
+Existen diversos métodos que permiten la reconstrucción de imagenes a partir 
+de la tomografía óptica. Las técnicas más utilizadas se basan 
+en la reconstrucción iterativa de imagenes basado en modelos (MOBIIR).
+Estas técnicas implementan modelos {\it forward}, que proveen predicciones
+en las lecturas del detector basándose en la estimación de la distribución
+espacial de las propiedades ópticas del medio. Las lecturas predichas por 
+el detector son comparadas con data experimental usando una función objetivo 
+definida de manera apropiada. La verdadera distribución de las propiedades 
+ópticas se determina actualizando iterativamente las predicciones y 
+realizando nuevos cálculos hacia adelante con estas propiedades ópticas 
+actualizadas hasta que los datos predichos coinciden con las lecturas del 
+detector. Finalmente, la distribución de las propiedades ópticas se muestra 
+como una imagen. 
+
+\begin{thebibliography}{9}
+
+\bibitem{Hielscher:98} 
+Hielscher AH, Alcouffe RE, Barbour RL,
+Phys Med Biol 43, 1285--302 (1998)
+
+\textit{Klose:99}. 
+Klose AD, Hielscher AH,
+Med Phys 26(8), 1698--707 (1999)
+ 
+\bibitem{Klose:02} 
+Klose AD, Netz U, Beuthan J, Hielscher AH,
+J Quant Spectrosc Radiat Transf 72, 691--713 (2002)
+
+\end{thebibliography}
+
+
+
+\end{document}
