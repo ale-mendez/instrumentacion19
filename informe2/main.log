@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.4)  23 JUN 2019 19:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.4)  4 JUL 2019 14:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -689,8 +689,7 @@ File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
-
-No file main.aux.
+ (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
@@ -707,6 +706,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 20.
+
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
@@ -727,88 +727,99 @@ LaTeX Font Info:    ... okay on input line 20.
 \everyMPtoPDFconversion=\toks28
 )
 \c@lstlisting=\count115
- [1
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<DAQ_amplitud.jpg, id=16, 722.7pt x 361.35pt>
+<DAQ_amplitud.jpg, id=17, 722.7pt x 361.35pt>
 File: DAQ_amplitud.jpg Graphic file (type jpg)
 <use DAQ_amplitud.jpg>
-Package pdftex.def Info: DAQ_amplitud.jpg  used on input line 51.
-(pdftex.def)             Requested size: 345.0pt x 172.49767pt.
-<DAQ_logfrequency.jpg, id=17, 722.7pt x 361.35pt>
+Package pdftex.def Info: DAQ_amplitud.jpg  used on input line 66.
+(pdftex.def)             Requested size: 276.00105pt x 137.99812pt.
+<DAQ_logfrequency.jpg, id=18, 722.7pt x 361.35pt>
 File: DAQ_logfrequency.jpg Graphic file (type jpg)
 <use DAQ_logfrequency.jpg>
-Package pdftex.def Info: DAQ_logfrequency.jpg  used on input line 53.
-(pdftex.def)             Requested size: 345.0pt x 158.91518pt.
-<DAQ-configuraciones.jpg, id=19, 580.41844pt x 436.63126pt>
+Package pdftex.def Info: DAQ_logfrequency.jpg  used on input line 68.
+(pdftex.def)             Requested size: 276.00105pt x 127.13214pt.
+<DAQ-configuraciones.jpg, id=20, 580.41844pt x 436.63126pt>
 File: DAQ-configuraciones.jpg Graphic file (type jpg)
 <use DAQ-configuraciones.jpg>
-Package pdftex.def Info: DAQ-configuraciones.jpg  used on input line 61.
+Package pdftex.def Info: DAQ-configuraciones.jpg  used on input line 76.
 (pdftex.def)             Requested size: 137.9979pt x 103.80759pt.
-<ajustelineal.jpg, id=20, 414.54875pt x 324.21124pt>
+<ajustelineal.jpg, id=21, 414.54875pt x 324.21124pt>
 File: ajustelineal.jpg Graphic file (type jpg)
 <use ajustelineal.jpg>
-Package pdftex.def Info: ajustelineal.jpg  used on input line 62.
+Package pdftex.def Info: ajustelineal.jpg  used on input line 77.
 (pdftex.def)             Requested size: 137.9979pt x 107.92503pt.
-<diferencia.jpg, id=21, 416.55624pt x 324.21124pt>
+<diferencia.jpg, id=22, 416.55624pt x 324.21124pt>
 File: diferencia.jpg Graphic file (type jpg)
 <use diferencia.jpg>
-Package pdftex.def Info: diferencia.jpg  used on input line 63.
+Package pdftex.def Info: diferencia.jpg  used on input line 78.
 (pdftex.def)             Requested size: 137.9979pt x 107.4056pt.
-<histogramafit.jpg, id=22, 396.48125pt x 326.21875pt>
+<histogramafit.jpg, id=23, 396.48125pt x 326.21875pt>
 File: histogramafit.jpg Graphic file (type jpg)
 <use histogramafit.jpg>
-Package pdftex.def Info: histogramafit.jpg  used on input line 64.
+Package pdftex.def Info: histogramafit.jpg  used on input line 79.
 (pdftex.def)             Requested size: 137.9979pt x 113.54112pt.
  [2 <./DAQ_logfrequency.jpg> <./DAQ_amplitud.jpg>]
-Underfull \hbox (badness 10000) in alignment at lines 77--77
+Underfull \hbox (badness 10000) in alignment at lines 92--92
 [][][][] 
- []
-
-
-Overfull \hbox (0.63945pt too wide) in paragraph at lines 86--87
-[]\OT1/cmr/m/n/10 Las ca-paci-dades de adquisici^^Son se es-tu-di-aron me-di-an
-te los puer-tos anal^^Sogicos.
  []
 
 [3 <./DAQ-configuraciones.jpg> <./ajustelineal.jpg> <./diferencia.jpg> <./histo
 gramafit.jpg>]
-Underfull \hbox (badness 6526) in paragraph at lines 101--101
+<amplitud_arduino.jpg, id=32, 1084.05pt x 361.35pt>
+File: amplitud_arduino.jpg Graphic file (type jpg)
+<use amplitud_arduino.jpg>
+Package pdftex.def Info: amplitud_arduino.jpg  used on input line 124.
+(pdftex.def)             Requested size: 345.0pt x 115.00027pt.
+
+Overfull \hbox (0.63945pt too wide) in paragraph at lines 120--128
+[]\OT1/cmr/m/n/10 Las ca-paci-dades de adquisici^^Son se es-tu-di-aron me-di-an
+te los puer-tos anal^^Sogicos.
+ []
+
+<FrecuenciasDelay100.jpg, id=33, 737.154pt x 573.8238pt>
+File: FrecuenciasDelay100.jpg Graphic file (type jpg)
+<use FrecuenciasDelay100.jpg>
+Package pdftex.def Info: FrecuenciasDelay100.jpg  used on input line 133.
+(pdftex.def)             Requested size: 207.0021pt x 161.13362pt.
+[4 <./amplitud_arduino.jpg>]
+Underfull \hbox (badness 6526) in paragraph at lines 150--150
 []|\OT1/cmr/m/n/10 Frecuencia se~nal de en-trada pin
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 101--101
+Underfull \hbox (badness 10000) in alignment at lines 150--150
 [][][][] 
  []
 
-[4] (./main.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[5 <./FrecuenciasDelay100.jpg>] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 4407 strings out of 494923
- 59204 string characters out of 6180743
- 115407 words of memory out of 5000000
- 7659 multiletter control sequences out of 15000+600000
- 9015 words of font info for 33 fonts, out of 8000000 for 9000
+ 4893 strings out of 494923
+ 63929 string characters out of 6180743
+ 140677 words of memory out of 5000000
+ 8135 multiletter control sequences out of 15000+600000
+ 9925 words of font info for 36 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,11n,32p,828b,254s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb>
-Output written on main.pdf (4 pages, 405117 bytes).
+ 42i,11n,40p,638b,1213s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (5 pages, 773975 bytes).
 PDF statistics:
- 65 PDF objects out of 1000 (max. 8388607)
- 41 compressed objects within 1 object stream
+ 78 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 37 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 47 words of extra memory for PDF output out of 10000 (max. 10000000)
 

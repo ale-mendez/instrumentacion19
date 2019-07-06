@@ -16,7 +16,6 @@ if __name__ == '__main__':
 
     QMiDriver = wrap_driver_cls(MiDriver)
     with QMiDriver.via_packfile('MiDriver.pack.yaml', check_update=True) as board:
-        board.motor = 1
-        board.pow_laser = 2000
-        print(board.pow_diodo)
+#        board.motor = 0
+         board.pow_laser = 10
         #print(angulo.potencia)

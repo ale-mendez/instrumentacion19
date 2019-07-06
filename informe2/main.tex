@@ -22,12 +22,27 @@ Placas de adquisición}
 \maketitle
 
 \begin{abstract}
-    En el presente informe se estudiaron las capacidades de dos placas de adquisición. Las placas utilizadas fueron un sensor DAQ y un arduino UNO. 
+    En el presente informe se estudiaron las capacidades de dos placas de adquisición. Las placas utilizadas fueron un sensor  {\sc daq} y un arduino  {\sc uno}. 
 \end{abstract}
 
 \section{Sensor DAQ}
 
-Se utilizó una placa de adquisición DAQ-Vernier de la marca National Instruments. Las capacidades de adquisición se estudiaron mediante los puertos 11 ($V1$), 10 ($V2$) y 9 ($Ground$) de esta. La tasa de muestreo se definió igual a 1000. Las respuestas en voltaje y frecuencia de la placa se muestran en la Figura~1 (a), (b), y (c), respectivamente. La amplitud mínima (panel a) es menor a 20 m$V_{pp}$, siendo ésta la mínima que se puede obtener con el generador de ondas utilizado. En el panel b, se puede observar que la amplitud máxima de voltaje es $\pm 10 V_{pp}$.  La caracterización en frecuencia se resume en el panel c. La frecuencia máxima registrada fue de 1kHz, la cual se corresponde a la tasa de muestreo preestablecida. No se realizaron mediciones con valores mayores a 1000. 
+Se utilizó una placa de adquisición DAQ-Vernier de la marca National Instruments. Las capacidades de adquisición se estudiaron mediante los puertos 11 ($V1$), 10 ($V2$) y 9 ($Ground$) de esta. La lectura de datos se realizó con {\sc python}, implementando el módulo {\sc nidaqmx.system}. A continuación se detalla el código utilizado con tal fin:
+\lstset{language=Python}
+\begin{lstlisting}[frame=single]  % Start your code-block
+
+import nidaqmx.system
+
+wave=[]
+rate = 1000
+with nidaqmx.Task() as task:
+    task.ai_channels.add_ai_voltage_chan("Dev8/ai0")
+    task.timing.cfg_samp_clk_timing(rate=rate)
+    wave=task.read(number_of_samples_per_channel=rate)
+\end{lstlisting}
+La tasa de muestreo "rate" se definió igual a 1000 en todas las mediciones. 
+
+Las respuestas en voltaje y frecuencia de la placa se muestran en la Figura~1 (a), (b), y (c), respectivamente. La amplitud mínima (panel a) es menor a 20 m$V_{pp}$, siendo ésta la mínima que se puede obtener con el generador de ondas utilizado. En el panel b, se puede observar que la amplitud máxima de voltaje es $\pm 10 V_{pp}$.  La caracterización en frecuencia se resume en el panel c. La frecuencia máxima registrada fue de 1kHz, la cual se corresponde a la tasa de muestreo preestablecida. No se realizaron mediciones con valores mayores a 1000. 
 Además, se evaluó la capacidad de la placa para medir en simultáneo. Para esto, se envió una rampa en ambos canales, y se midió la  diferencia entre ellos ($\Delta V$). La conexión realizada se puede ver en la Figura 2a. El valor medido de $\Delta V$ resultó distinto de cero (ver Figura 2c), de manera que ambos canales tienen una diferencia temporal en la adquisión. 
 
 Para la determinación de la diferencia temporal entre los canales de la placa DAQ, se procedió de la siguiente manera. Se consideraron dos rampas, las cuales fueron aproximadas como rectas:
@@ -48,9 +63,9 @@ Los resultados obtenidos fueron $A=(0.1608 \pm 0.0001) \frac{V}{s}$, $V0_2 = -(0
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{DAQ_amplitud.jpg} \\
+  \includegraphics[width=0.8\textwidth]{DAQ_amplitud.jpg} \\
   (a) \hspace{4cm} (b)
-  \includegraphics[trim={0 0 0 1.cm},clip, width=\textwidth]{DAQ_logfrequency.jpg}
+  \includegraphics[trim={0 0 0 1.cm},clip, width=0.8\textwidth]{DAQ_logfrequency.jpg}
   (c)
   \caption{Respuesta en amplitud (a) mínima, (b) máxima, y (c) en frecuencia de la placa DAQ.}
   \label{fig:resp_freq}
@@ -79,28 +94,62 @@ Frecuencia señal de entrada & 1 & 10000 & Hz \\
 \caption{Caracterización de la lectura de la placa DAQ para la configuración 1 mostrada en la Figura 2a de adquisición de datos.}
 \end{table}
 
+\newpage
 \section{Placa Arduino}
 
 Las placas Arduino cuentan con 14 pines digitales, siendo 6 PWM (Pulse Width Modulation), 6 pines de entrada analógica, y una alimentación entre 5 a 12 V.
+En esta sección analizaremos la respuesta de la placa como adquisidor de datos en amplitud y frecuencia. Para ello, se utilizó un generador de onda y una placa de arduino {\sc uno}. 
 
-Las capacidades de adquisición se estudiaron mediante los puertos analógicos. La caracterización en frecuencia se resume en la Figura~XXX. La placa no puede medir señales mayores a 5V. Y de los resultados en frecuencia se observa que el sistema puede medir en frecuencias entre 0 a N. Y la respuesta en voltaje se puede ver en la figura XXX, mostrando que puede leer voltajes entre -5 a 5 V (ver si queda el voltaje negativo). 
+La comunicación con la placa de arduino fue realizada con {\sc python} a través del puente serie con el módulo {\sc serial}. A continuación mostramos el esqueleto del código implementado con este fin:
+\lstset{language=Python}
+\begin{lstlisting}[frame=single]  % Start your code-block
 
-Cabe destacar que esta placa permite una gran versatilidad para la envia y resibir señales, por las características ya mencionadas y el prescio de la misma. (poner algo asi)
+import serial
+arduino=serial.Serial('COM4',9600)
+npts=500
+wave=[]
+for i in range(npts):
+    inp=arduino.readline().strip()
+    fvol=float(inp)
+    wave.append(fvol)
+arduino.close()
+\end{lstlisting}
 
-El programa utilizado para medir la la placa Arduino es similar al siguiente:
-"poner algo" pued ser la parte de programacion de arduino y la lectura del puerto serie con python. O ver si ponemos algo de Lanzt.
 
+
+Las capacidades de adquisición se estudiaron mediante los puertos analógicos. La caracterización en amplitud se resume en la Figura~\ref{fig:amp-arduino}. 
+Se realizaron mediciones desde los 0.1 $V_{PP}$ hasta 5 $V_{PP}$, siendo éstos los límites mínimo y máximo de la placa. El valor mínimo alcanzado estuvo determinado por limitaciones del generador de onda con el que se contaba. Para un valor mayor al límite máximo, por ejemplo de 7 $V_{PP}$, la señal es recortada debido a las limitaciones de la placa.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{amplitud_arduino.jpg} \\
+  (a) \hspace{4cm} (b)
+  \caption{Respuesta en amplitud (a) mínima y (b) máxima de la placa arduino {\sc uno}.}
+  \label{fig:amp-arduino}
+\end{figure}
+
+La respuesta en frecuencia de la placa arduino se puede ver en la Figura~\ref{fig:freq-arduino}. Los mediciones de frecuencia (Frecuencia de Salida) se realizaron variando la frecuencia de una onda sinusoidal (Frecuencia de Entrada) desde 1 a 700 Hz con el generador de onda. El incremento de las barras de error de nuestra medición muestra que la placa empieza a tener dificultades para detectar frecuencias mayores a ese valor. 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{FrecuenciasDelay100.jpg} \\
+  (a) \hspace{4cm} (b)
+  \caption{Respuesta en frecuencia de la placa arduino {\sc uno}.}
+  \label{fig:freq-arduino}
+\end{figure}
+
+%Las limitaciones en respuesta de la placa arduino {\sc uno} se ven opacadas por la gran versatilidad en la recepción (y envío) de señales.
+
+En la Tabla~\ref{tab:in-arduino} resumimos los datos recolectados en la caracterización de entrada de la placa.
 \begin{table}[h]
 \begin{tabularx}{\textwidth}{b|s|s|s }
 Característica & Min & Máx & Unidad \\
 \hline
-Voltaje señal de entrada pin analógico & 5 & -5 & V \\ 
-Voltaje señal de salida pin digital & -5 & 5 & V \\
-Frecuencia señal de entrada pin analógico & 1 & 10000 & Hz \\
-Frecuencia señal de salida pi digital & 10 & 10000 & Hz 
+Voltaje señal de entrada pin analógico & 0.1 & 5 & V \\ 
+%Voltaje señal de salida pin digital & -5 & 5 & V \\
+Frecuencia señal de entrada pin analógico & 10 & 700 & Hz \\
+%Frecuencia señal de salida pi digital & 10 & 10000 & Hz 
 \end{tabularx}
-\label{tab:inout-audio}
-\caption{Caracterización de señales de entrada y salida de la placa de audio.}
+\label{tab:in-arduino}
+\caption{Caracterización de señales de entrada de la placa de audio.}
 \end{table}
 
 \end{document}

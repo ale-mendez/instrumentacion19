@@ -9,8 +9,8 @@
 \DeclareMathOperator*{\argmin}{arg\,min}
 
 %opening
-\title{Tomografía óptica usando la ecuación independiente del tiempo 
-de transferencia radiativa}
+\title{Tomografía óptica usando la ecuación de transferencia radiativa 
+independiente del tiempo}
 \author{A. Mendez}
 \date{}
 
@@ -49,8 +49,8 @@ entre tejidos sanos y patológicos proveen un contraste para esta
 tecnología de mapeo.
 
 El transporte de fotones en medios dispersivos puede describirse a 
-través de la ecuación independiente del tiempo de transferencia 
-radiativa, dada por
+través de la ecuación de transferencia radiativa independiente del tiempo, 
+dada por
 \begin{equation}
  \omega\nabla\Psi(\mathbf{r},\omega)+(\mu_a+\mu_s)\Psi(\mathbf{r},\omega)
  =S(\mathbf{r},\omega) + 
@@ -78,13 +78,15 @@ donde $\theta$ es el ángulo entre las dos direcciones $\omega$ y
 $\omega$'. El factor $g$ se denomina factor de anisotropía y es utilizado 
 para caracterizar la distribución angular de dispersión.
 
-En general, la mayoría de los algoritmos implementados se basan en la validez 
-de la aproximación de difusión de la ecuación de transferencia de radiación.
-Sin embargo, esta aproximación ha mostrado tener límites experimentales y 
-teóricos a la hora de describir la propagación de luz en tejidos biológicos.
+En general, la mayoría de los algoritmos implementados se basan en la 
+validez de la aproximación de difusión de la ecuación de transferencia 
+de radiación. Sin embargo, esta aproximación ha mostrado tener límites
+experimentales y teóricos a la hora de describir la propagación de luz 
+en tejidos biológicos~\cite{Hielscher:98}.
 Existen diversos métodos que permiten la reconstrucción de imagenes a partir 
 de la tomografía óptica. Las técnicas más utilizadas se basan 
-en la reconstrucción iterativa de imagenes basado en modelos (MOBIIR).
+en la reconstrucción iterativa de imagenes basado en modelos 
+(MOBIIR)~\cite{Klose:99,Klose:02}.
 Estas técnicas implementan modelos {\it forward}, que proveen predicciones
 en las lecturas del detector basándose en la estimación de la distribución
 espacial de las propiedades ópticas del medio. Las lecturas predichas por 

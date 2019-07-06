@@ -1,0 +1,5 @@
+class_spec: run:MiDriver
+fqbn: ''
+port: ''
+sketch_folder: /home/ale/instrumentacion19/ProyectoFinal/linux_test/MiDriver
+usbID: ''

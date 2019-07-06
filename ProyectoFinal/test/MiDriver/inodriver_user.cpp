@@ -10,52 +10,42 @@
 ///
 /////////////////////////////////////////////////////////////
 
+#include <arduino.h>
+
 #include "inodriver_user.h"
+
 // variables MOTOR:
 int pin_motor = 10;
-int istep = 0;
+int pin_laser = 9;
 float val;
 
 void user_setup() {
-  Serial.begin(9600);
   pinMode(pin_motor,OUTPUT);
-  analogReadResolution(8);
-  Serial.setTimeout(50);
+  pinMode(pin_laser,OUTPUT);
 }
 
 void user_loop() {
+  int set_LASER(float);
 }
 
 // COMMAND: MOTOR, FEAT: motor
 int set_MOTOR(float istep) {
-  if (istep>0) {
-    Serial.println(istep);
-    //digitalWrite(pin_motor , LOW);
-    //delay(100);
-    digitalWrite(pin_motor , HIGH);
-    delay(100);
-    digitalWrite(pin_motor , LOW);
-    delay(100);
-    //digitalWrite(pin_motor , HIGH);
-    istep=0;
-    }
-  }
+  digitalWrite(pin_motor , HIGH);
+  delay(100);
+  digitalWrite(pin_motor , LOW);
+  delay(100);
   return 0;
 };
-
 
 // COMMAND: DIODO, FEAT: pow_diodo
 float get_DIODO() {
   val = analogRead(A0);
-  Serial.println("VALUE:\n");
-  Serial.println(val);
-  return 0.0;
+  return val;
 };
-
 
 // COMMAND: LASER, FEAT: pow_laser
 int set_LASER(float value) {
+  analogWrite(pin_laser, value); 
+  delay(1000);    
   return 0;
 };
-
-
