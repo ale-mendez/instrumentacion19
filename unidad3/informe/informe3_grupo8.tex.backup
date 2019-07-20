@@ -206,7 +206,7 @@ No se pudo determinar el {\it slew rate} mediante la placa de audio,
 dada la li-mitación de ésta en frecuencia. Sin embargo, se presentan las
 medidas realizadas con un generador de onda y un osciloscopio en la 
 Figura 5-b. Se utilizó un voltaje de 2~$V_{PP}$ y una frecuencia de 
-50 kHz de una onda cuadrada. A partir de los datos se calculó un 
+5 kHz de una onda cuadrada. A partir de los datos se calculó un 
 {\it slew rate} de 0.507 $\pm$ 0.002 $\frac{V}{\mu s}$.
 
 \begin{figure}[H]

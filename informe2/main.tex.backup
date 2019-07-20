@@ -16,16 +16,15 @@
 \title{Informe técnico: \\
 Placas de adquisición}
 \author{P. Domenichini, A. Mendez -- Grupo 8}
-\date{} 
 
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-En el presente informe se estudiaron las capacidades de dos placas 
-para la medición de señales. Las placas utilizadas fueron un sensor 
-{\sc daq} y un arduino {\sc uno}. 
+    En el presente informe se estudiaron las capacidades de dos placas 
+para lectura de señales. Las placas utilizadas fueron un sensor 
+{\sc daq} y un arduino  {\sc uno}. 
 \end{abstract}
 
 \section{Sensor DAQ}
@@ -90,8 +89,8 @@ Finalmente, los valores de respuesta en amplitud y frecuencia de la placa DAQ se
 \begin{tabularx}{\textwidth}{b|s|s|s }
 Característica & Min & Máx & Unidad \\
 \hline
-Voltaje señal de entrada & 0.02 & $\pm$10 & V \\ 
-Frecuencia señal de entrada & 1 & 1000 & Hz \\
+Voltaje señal de entrada & 10 & -10 & V \\ 
+Frecuencia señal de entrada & 1 & 10000 & Hz \\
 \end{tabularx}
 \label{tab:inout-audio}
 \caption{Caracterización de la lectura de la placa DAQ para la configuración 1 mostrada en la Figura 2a de adquisición de datos.}
@@ -100,7 +99,7 @@ Frecuencia señal de entrada & 1 & 1000 & Hz \\
 \newpage
 \section{Placa Arduino}
 
-Las placas arduino cuentan con 14 pines digitales, siendo 6 PWM (Pulse Width Modulation), 6 pines de entrada analógica, y una alimentación entre 5 a 12 V.
+Las placas Arduino cuentan con 14 pines digitales, siendo 6 PWM (Pulse Width Modulation), 6 pines de entrada analógica, y una alimentación entre 5 a 12 V.
 En esta sección analizaremos la respuesta de la placa como adquisidor de datos en amplitud y frecuencia. Para ello, se utilizó un generador de onda y una placa de arduino {\sc uno}. 
 
 La comunicación con la placa de arduino fue realizada con {\sc python} a través del puente serie con el módulo {\sc serial}. A continuación mostramos el esqueleto del código implementado con este fin:
@@ -130,32 +129,12 @@ Se realizaron mediciones desde los 0.1 $V_{PP}$ hasta 5 $V_{PP}$, siendo éstos 
   \label{fig:amp-arduino}
 \end{figure}
 
-La respuesta en frecuencia de la placa arduino se puede ver en la 
-Figura~\ref{fig:freq-arduino}. Los mediciones de frecuencia (Frecuencia de
-Salida) se realizaron variando la frecuencia de una onda sinusoidal 
-(Frecuencia de Entrada) desde 1 a 700 Hz con el generador de onda, leyendo
-la salida con un tiempo de adquisición (delay) de 100 ms. El incremento de
-las barras de error de
-nuestra medición muestra que la placa empieza a tener dificultades para 
-detectar frecuencias mayores a ese valor. Por lo que se realizaron medidas 
-para varios tiempos de adquisición (10 ms, 50 ms y 100 ms). Se tomó cómo 
-cota mínima cuando el tiempo de medición era tan lento que la placa 
-capturaba el voltaje en una parte al azar de la onda, cómo se muestra 
-en la figura \ref{fig:freq-arduino}-(a). Y cómo cota máxima cuando se 
-comenzaban a tener pocos puntos para obtener la frecuencia (figura 
-\ref{fig:freq-arduino}-(b)). En la figura \ref{fig:freq-arduino}-(c) 
-se muestran las frecuencias de entrada obtenidos con el puerto analógico 
-del arduino para distintos tiempos de adquisición.
-
+La respuesta en frecuencia de la placa arduino se puede ver en la Figura~\ref{fig:freq-arduino}. Los mediciones de frecuencia (Frecuencia de Salida) se realizaron variando la frecuencia de una onda sinusoidal (Frecuencia de Entrada) desde 1 a 700 Hz con el generador de onda. El incremento de las barras de error de nuestra medición muestra que la placa empieza a tener dificultades para detectar frecuencias mayores a ese valor. 
 \begin{figure}[H]
   \centering
- \includegraphics[width=0.40\textwidth]{FrecuenciaBaja.jpg} (a)
- \hspace{0.1cm}
- \includegraphics[width=0.40\textwidth]{FrecuenciaAlta.jpg} (b)  \\
- \includegraphics[width=0.40\textwidth]{Frecuencias.jpg} (c)
-  \caption{(a) y (b) Medidas de un frecuencia muy baja y muy alta para el 
-  tiempo de adquisición usado, respectivamente. (c) Medidas de frecuencia 
-  utilizando distintos tiempos de adquisición. }
+  \includegraphics[width=0.6\textwidth]{FrecuenciasDelay100.jpg} \\
+  (a) \hspace{4cm} (b)
+  \caption{Respuesta en frecuencia de la placa arduino {\sc uno}.}
   \label{fig:freq-arduino}
 \end{figure}
 
@@ -166,14 +145,13 @@ En la Tabla~\ref{tab:in-arduino} resumimos los datos recolectados en la caracter
 \begin{tabularx}{\textwidth}{b|s|s|s }
 Característica & Min & Máx & Unidad \\
 \hline
-Voltaje señal de entrada pin analógico & 0 & 5 & V \\ 
-Voltaje señal de salida pin digital & 0 & 5 & V \\
-Frecuencia señal de entrada pin analógico & 0 & 700 & Hz \\
+Voltaje señal de entrada pin analógico & 0.1 & 5 & V \\ 
+%Voltaje señal de salida pin digital & -5 & 5 & V \\
+Frecuencia señal de entrada pin analógico & 10 & 700 & Hz \\
 %Frecuencia señal de salida pi digital & 10 & 10000 & Hz 
 \end{tabularx}
 \label{tab:in-arduino}
-\caption{Caracterización de señales de entrada de la placa de arduino utilizando un 
-tiempo de adquisición de 100 ms en la lectura de los datos.}
+\caption{Caracterización de señales de entrada de la placa de audio.}
 \end{table}
 
 \end{document}
